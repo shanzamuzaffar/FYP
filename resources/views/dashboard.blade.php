@@ -28,8 +28,12 @@
     <link href="sass/main.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-    <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-        {{ __('Dashboard') }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.bootstrap4.css">
+
+
+
+
 
 </head>
 
@@ -244,7 +248,7 @@
                     <a href="javascript:;" class="has-arrow">
                         <div class="parent-icon"><i class='bx bxs-home'></i>
                         </div>
-                        <div class="menu-title">Dashboard</div>
+                        {{-- <div class="menu-title">Dashboard</div> --}}
                     </a>
                 </li>
 
@@ -259,7 +263,7 @@
                         </button>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item text-white" href="#">Add</a>
+                            <a class="dropdown-item text-white" href="{{ route('supervisor.index') }}">Add</a>
                             <a class="dropdown-item text-white" href="#">Edit</a>
                             <a class="dropdown-item text-white" href="#">Delete</a>
                         </div>
@@ -360,12 +364,20 @@
             <!--end navigation-->
         </div>
 
+
     </aside>
     <!--end sidebar-->
 
 
 
+        <div class="main-wrapper">
+           <div class="main-content">
+            <div class="content">
+                @yield('content')
+            </div>
 
+           </div>
+        </div>
 
     <!--plugins-->
     <script src="assets/js/jquery.min.js"></script>
@@ -381,7 +393,19 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.0.3/js/dataTables.bootstrap4.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
+        });
+    </script>
 </body>
 
 
