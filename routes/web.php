@@ -20,7 +20,7 @@ Route::get('/login', [CustomAuthController::class, 'showLoginForm'])->name('logi
 Route::get('/login/admin', [CustomAuthController::class, 'showAdminLoginForm'])->name('admin.login');
 // Route for third login page
 Route::get('/login/other', [CustomAuthController::class, 'showOtherLoginForm'])->name('other.login');
-  
+  Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

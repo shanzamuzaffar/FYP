@@ -30,12 +30,13 @@
         }
 
         .wrapper {
-    width: 110%;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.1);
-    padding: 30px; /* Adjusted padding */
-}
+            width: 110%;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            /* Adjusted padding */
+        }
 
         .title {
             background: #16a085;
@@ -46,9 +47,11 @@
             padding: 20px 0;
             text-align: center;
             margin-bottom: 20px;
-            width: calc(105% + 40px); /* Extend width by 40px */
-   margin-left: -30px; /* Move left by half of the added width */
-  margin-right: -30px;
+            width: calc(105% + 40px);
+            /* Extend width by 40px */
+            margin-left: -30px;
+            /* Move left by half of the added width */
+            margin-right: -30px;
         }
 
         .row {
@@ -151,12 +154,14 @@
 
                 <div class="row">
                     <i class="fas fa-user"></i>
-                    <input id="email" type="email" name="email" placeholder="Email" required autofocus autocomplete="username">
+                    <input id="email" type="email" name="email" placeholder="Email" required autofocus
+                        autocomplete="username">
                 </div>
 
                 <div class="row">
                     <i class="fas fa-lock"></i>
-                    <input id="password" type="password" name="password" placeholder="Password" required autocomplete="current-password">
+                    <input id="password" type="password" name="password" placeholder="Password" required
+                        autocomplete="current-password">
                 </div>
 
                 <div class="row">

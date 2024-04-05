@@ -15,6 +15,22 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        $admin = new User();
+        $admin->name = "admin";
+        $admin->email= "shanzamuzaffar1215@gmail.com";
+        $admin->password = Hash::make('admin123');
+        $admin->save();
+
+        $admin->assignRole('admin');
+         
+$faculty = new User();
+$faculty->name = "faculty";
+$faculty->email = "faculty@gmail.com";
+$faculty->password = Hash::make('faculty123');
+$faculty->save();
+
+$faculty->assignRole('faculty');
+
         $users = [
             [
                 'name' => 'Shanza Muzaffar',
@@ -46,7 +62,8 @@ class UserSeeder extends Seeder
 
         // Loop through the users array and insert each user into the database
         foreach ($users as $userData) {
-            User::create($userData);
+            $user = User::create($userData);
+            $user->assignRole('user');
         }
     }
 }
