@@ -12,12 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('supervisor', function (Blueprint $table) {
-
+            $table->id();
           $table->string('name');
         $table->string('designation'); // Changed column name to lowercase
         $table->integer('total_slots'); // Changed column name to lowercase
         $table->integer('available_slots');
-         $table->string('Status');  
+         $table->string('Status');
         $table->timestamps();
         });
     }
