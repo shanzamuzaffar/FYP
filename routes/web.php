@@ -15,7 +15,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 // Route for first login page
-Route::get('/login', [CustomAuthController::class, 'showLoginForm'])->name('login');
+Route::get('/login', [CustomAuthController::class, 'showLoginForm'])->name('c');
 // Route for second login page
 Route::get('/login/admin', [CustomAuthController::class, 'showAdminLoginForm'])->name('admin.login');
 // Route for third login page
