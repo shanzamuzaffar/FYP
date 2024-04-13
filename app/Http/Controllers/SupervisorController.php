@@ -46,4 +46,37 @@ class SupervisorController extends Controller
     }
 
 
+public function update(Request $request, $id)
+
+{
+    $request->validate([
+        'name' => 'required|string',
+        'designation' => 'required|string',
+        'total_slots' => 'required|integer',
+        'available_slots' => 'required|integer',
+        'status' => 'required|in:0,1',
+    ]);
+    $supervisor = Supervisor::findOrFail($id);
+
+    $supervisor->name = $request->input('name');
+    $supervisor->designation = $request->input('designation');
+    $supervisor->total_slots = $request->input('total_slots');
+    $supervisor->available_slots = $request->input('available_slots');
+    $supervisor->status = $request->input('status');
+
+    $supervisor->save();
+
+    return redirect()->back()->with('success', 'Supervisor updated successfully');
+}
+
+
+public function destroy($id)
+{
+    $supervisor = Supervisor::findOrFail($id);
+    $supervisor->delete();
+
+    return redirect()->back()->with('success', 'Supervisor deleted successfully');
+}
+
+
 }
