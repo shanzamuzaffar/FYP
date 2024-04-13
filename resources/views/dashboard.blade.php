@@ -248,7 +248,7 @@
                     <a href="javascript:;" class="has-arrow">
                         <div class="parent-icon"><i class='bx bxs-home'></i>
                         </div>
-                        {{-- <div class="menu-title">Dashboard</div> --}}
+                        <div class="menu-title">Dashboard</div>
                     </a>
                 </li>
 
@@ -256,7 +256,7 @@
                 <li class="py-2 ">
                     <div class="dropdown">
                         <button
-                            class="btn btn-secondary  dropdown-toggle d-flex align-items-center gap-2 bg-transparent border-0"
+                            class="btn btn-secondary dropdown-toggle d-flex align-items-center gap-2 bg-transparent border-0"
                             type="button" id="dropdownMenuButton">
                             <div class="parent-icon"><i class='bx bxs-user'></i></div>
                             <div class="menu-title">Supervisor Selection</div>
@@ -339,15 +339,16 @@
 
                 <!-- New logout list item -->
                 <li class="py-2 list-item">
-                    <form method="POST" action="{{ route('logout') }}">
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
                         @csrf
                         <button type="submit"
                             class="btn btn-secondary d-flex align-items-center gap-2 bg-transparent border-0">
-                            <div class="parent-icon"><i class='bx bx-log-out'></i></div>
+                            <div class="parent-icon"><i class="bx bx-log-out"></i></div>
                             <div class="menu-title">{{ __('Log Out') }}</div>
                         </button>
                     </form>
                 </li>
+
             </ul>
 
             <ul class="img-list mx-3">
@@ -370,14 +371,14 @@
 
 
 
-        <div class="main-wrapper">
-           <div class="main-content">
+    <div class="main-wrapper">
+        <div class="main-content">
             <div class="content">
                 @yield('content')
             </div>
 
-           </div>
         </div>
+    </div>
 
     <!--plugins-->
     <script src="assets/js/jquery.min.js"></script>
