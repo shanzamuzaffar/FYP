@@ -263,7 +263,7 @@
                         </button>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item text-white" href="{{ route('supervisor.index') }}">Add</a>
+                            <a class="dropdown-item text-white" href="{{ route('supervisor.index') }}">Supervisor List</a>
                             {{-- <a class="dropdown-item text-white" href="#">Edit</a>
                             <a class="dropdown-item text-white" href="#">Delete</a> --}}
                         </div>
