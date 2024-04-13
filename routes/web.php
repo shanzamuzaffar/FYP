@@ -22,6 +22,9 @@ Route::get('/login', [CustomAuthController::class, 'showLoginForm'])->name('logi
 
 Route::get('/supervisor',[SupervisorController::class,'index'])->name('supervisor.index');
 Route::post('/supervisor', [SupervisorController::class, 'store'])->name('supervisor.store');
+
+Route::post('/supervisor/update/{id}', [SupervisorController::class, 'update'])->name('supervisor.update');
+Route::post('/supervisor/delete/{id}', [SupervisorController::class, 'destroy'])->name('supervisor.delete');
 Route::post('/toggle-status/{id}', [SupervisorController::class, 'toggleStatus'])->name('supervisor.toggleStatus');
 
 

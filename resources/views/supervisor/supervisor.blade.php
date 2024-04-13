@@ -38,7 +38,8 @@
                                 <td>{{ $supervisor->available_slots }}</td>
                                 <td>
                                     @if ($supervisor->Status == 0)
-                                        <form action="{{ route('supervisor.toggleStatus', ['id' => $supervisor->id]) }}" method="POST">
+                                        <form action="{{ route('supervisor.toggleStatus', ['id' => $supervisor->id]) }}"
+                                            method="POST">
                                             @csrf
                                             <button type="submit" class="btn btn-sm btn-primary">Select</button>
                                         </form>
@@ -49,7 +50,21 @@
 
 
                                 <td>
-                                    <button class="btn-primary"> Edit</button>
+                                    <button type="button" class="btn btn-primary editBtn"
+                                        data-target="#editModal-{{ $supervisor->id }}" data-toggle="modal">
+                                        Edit
+                                    </button>
+
+                                    <!-- Delete button to open the confirmation modal -->
+                                    <button type="button" class="btn btn-danger" data-toggle="modal"
+                                        data-target="#deleteModal-{{ $supervisor->id }}">
+                                        Delete
+                                    </button>
+
+                                    @include('supervisor.edit-modal')
+                                    @include('supervisor.delete-modal')
+
+
                                 </td>
                             </tr>
                         @endforeach
