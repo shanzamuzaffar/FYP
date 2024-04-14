@@ -69,6 +69,27 @@ form input {
   text-indent: 40px;
 }
 
+select {
+  font-family: inherit;
+  width: 100%;
+  outline: none;
+  background-color: #fff;
+  border-radius: 4px;
+  border: none;
+  display: block;
+  padding: 0.9rem 0.7rem;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  font-size: 17px;
+  color: #4A4A4A;
+  text-indent: 40px;
+
+}
+
+/* Style for the dropdown options */
+option {
+  font-size: 16px;
+}
+
 form .btn {
   outline: none;
   border: none;
