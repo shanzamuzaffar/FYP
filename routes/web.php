@@ -10,10 +10,12 @@ Route::get('/', function () {
 Route::get('rolebutton', function () {
     return view('Rolebutton');
 });
-
-
+  Route::get('/TitleSelection', function () {
+    return view('TitleSelection');
+  });
 Route::get('/dashboard', function () {
     return view('dashboard');
+    
 })->middleware(['auth', 'verified'])->name('dashboard');
 // Route for first login page
 Route::get('/login', [CustomAuthController::class, 'showLoginForm'])->name('c');
