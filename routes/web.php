@@ -19,6 +19,10 @@ Route::get('rolebutton', function () {
 // Route::get('/TitleSelection', function () {
 //     return view('TitleSelection');
 // });
+
+Route::get('finalizesupervisor', function () {
+    return view('finalizesupervisor');
+});
 Route::get('/title-selection',[SelectionController::class, 'index'])->name('selection');
 
 Route::get('/dashboard', function () {
