@@ -275,7 +275,7 @@
 
 
                 <li class="py-2 list-item">
-                    <a href="javascript:;" class="has-arrow">
+                    <a href="/finalizesupervisor" class="has-arrow">
                         <div class="parent-icon"><i class='bx bxs-user-rectangle'></i>
                         </div>
                         <div class="menu-title">Finalized Supervisor</div>
