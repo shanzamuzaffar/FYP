@@ -282,7 +282,7 @@
                     </a>
                 </li>
                 <li class="py-2 list-item">
-                    <a href="TitleSelection" class="has-arrow">
+                    <a href="/title-selection" class="has-arrow">
                         <div class="parent-icon"><i class='bx bxs-notepad'></i>
                         </div>
                         <div class="menu-title">Title Selection</div>

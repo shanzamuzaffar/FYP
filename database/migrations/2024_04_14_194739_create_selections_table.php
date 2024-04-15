@@ -18,7 +18,11 @@ return new class extends Migration
             $table->string('group_member_1');
             $table->string('group_member_2');
             $table->string('group_member_3');
-            $table->string('supervisor');
+
+            $table->unsignedBigInteger('supervisor_id');
+
+            $table->foreign('supervisor_id')->references('id')->on('supervisor')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
