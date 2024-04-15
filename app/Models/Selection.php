@@ -15,6 +15,6 @@ class Selection extends Model
         'group_member_1',
         'group_member_2',
         'group_member_3',
-        'supervisor',
+        'supervisor_id',
     ];
 }

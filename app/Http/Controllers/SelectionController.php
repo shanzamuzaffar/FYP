@@ -4,29 +4,35 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Selection; // Assuming you have a Selection model
+use App\Models\Supervisor;
 
 class SelectionController extends Controller
 {
+
+    public function index(){
+        $supervisors=Supervisor::all();
+        return view('TitleSelection',compact('supervisors'));
+    }
+
     public function store(Request $request)
     {
         // Validate the form data
-        $validatedData = $request->validate([
+         $request->validate([
             'title' => 'required|string',
             'class_name' => 'required|string',
             'group_member_1' => 'required|string',
             'group_member_2' => 'required|string',
             'group_member_3' => 'required|string',
-            'supervisor' => 'required|string',
+            'supervisor_id' => 'required',
         ]);
 
-        // Create a new Selection instance
         $selection = new Selection();
-        $selection->title = $validatedData['title'];
-        $selection->class_name = $validatedData['class_name'];
-        $selection->group_member_1 = $validatedData['group_member_1'];
-        $selection->group_member_2 = $validatedData['group_member_2'];
-        $selection->group_member_3 = $validatedData['group_member_3'];
-        $selection->supervisor = $validatedData['supervisor'];
+        $selection->title = $request['title'];
+        $selection->class_name = $request['class_name'];
+        $selection->group_member_1 = $request['group_member_1'];
+        $selection->group_member_2 = $request['group_member_2'];
+        $selection->group_member_3 = $request['group_member_3'];
+        $selection->supervisor_id = $request['supervisor_id'];
 
         // Save the Selection instance
         $selection->save();

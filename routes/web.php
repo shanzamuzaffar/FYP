@@ -16,9 +16,10 @@ Route::get('rolebutton', function () {
     return view('Rolebutton');
 });
 
-Route::get('/TitleSelection', function () {
-    return view('TitleSelection');
-});
+// Route::get('/TitleSelection', function () {
+//     return view('TitleSelection');
+// });
+Route::get('/title-selection',[SelectionController::class, 'index'])->name('selection');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -27,6 +28,7 @@ Route::get('/dashboard', function () {
 // Route for first login page
 Route::get('/login', [CustomAuthController::class, 'showLoginForm'])->name('c');
 Route::post('/login', [CustomAuthController::class, 'showLoginForm'])->name('login');
+
 
 // Supervisor routes
 Route::get('/supervisor', [SupervisorController::class, 'index'])->name('supervisor.index');
