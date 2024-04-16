@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\SupervisorController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SelectionController;
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\SupervisorController;
 
 Route::get('/', function () {
     return view('indexL');
@@ -33,7 +34,10 @@ Route::get('/dashboard', function () {
 Route::get('/login', [CustomAuthController::class, 'showLoginForm'])->name('c');
 Route::post('/login', [CustomAuthController::class, 'showLoginForm'])->name('login');
 
-
+Route::get('/data', [UserController::class, 'index'])->name('data.index');
+Route::post('/data/update/{id}', [UserController::class, 'update'])->name('data.update');
+Route::post('/data/delete/{id}', [UserController::class, 'destroy'])->name('data.delete');
+Route::post('/data', [UserController::class, 'store'])->name('data.store');
 // Supervisor routes
 Route::get('/supervisor', [SupervisorController::class, 'index'])->name('supervisor.index');
 Route::post('/supervisor', [SupervisorController::class, 'store'])->name('supervisor.store');
