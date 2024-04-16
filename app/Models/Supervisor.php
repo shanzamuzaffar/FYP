@@ -13,4 +13,9 @@ class Supervisor extends Model
     protected $fillable = [
         'name', 'designation', 'total_slots', 'available_slots', 'status'
     ];
+
+    public function selections()
+    {
+        return $this->hasMany(Selection::class);
+    }
 }

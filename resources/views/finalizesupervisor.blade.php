@@ -42,21 +42,21 @@
             <div class="col-md-12">
 
                 <h2>Finalized Supervisor List</h2>
-{{-- changes here --}}
-                <table  class="table table-striped table-bordered">
+                {{-- changes here --}}
+                <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
-                            <th> # </th>
+                            <th>Sr # </th>
                             <th>Supervisor Name</th>
                             <th>Project Title</th>
                             <th>Student Name </th>
-                            <th>Arid No</th>
+
                             <th>Class</th>
 
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        {{-- <tr>
                             <td>1</td>
                             <td>Mr. Muhammad Azhar</td>
                             <td>Central Coordination System</td>
@@ -65,51 +65,28 @@
                             <td>BSSE 7(A)</td>
 
 
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Ms.Aiman Khan Nazir</td>
-                            <td>Smart School Shuttle</td>
-                            <td>Ramsha Malik <br> Rameen Hahmi<br> Umama Bibi</td>
-                            <td>20-ARID-819 <br> 20-ARID-818 <br>20-ARID-834</td>
-                            <td>BSSE 7(B)</td>
+                        </tr> --}}
 
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Ms.Nergis Gulzar</td>
-                            <td>AI-Jabbar Android Application</td>
-                            <td>Sara Ibrahim <br> Sajeeha Ahmed</td>
-                            <td>20-ARID-823 <br> 20-ARID-821 </td>
-                            <td>BSSE 7(B)</td>
 
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Dr.Kashif Sattar</td>
-                            <td>Intelli Firewall</td>
-                            <td>Amna Yaseen <br> Maha Arshad<br> Shoaib Teshrif</td>
-                            <td>20-ARID-753 <br> 20-ARID-779 <br>20-ARID-830</td>
-                            <td>BSSE 7(A)</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Dr.Ruqia Bibi</td>
-                            <td>Physio Flex</td>
-                            <td>Hamza Akram <br> Syeda Moniza<br> Muhammad Fahad Basir</td>
-                            <td>20-ARID-763 <br> 20-ARID-833 <br>20-ARID-790</td>
-                            <td>BSSE 7(A)</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Ms.Bushra Hameed</td>
-                            <td>Room Roamer</td>
-                            <td>Meerab Mushtaq <br>Mehmoona Noor<br> Sayyam Safdar</td>
-                            <td>20-ARID-782 <br> 20-ARID-783 <br>20-ARID-824</td>
-                            <td>BSSE 7(A)</td>
-                        </tr>
+                        @foreach ($selections as $selection)
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $selection->supervisor->name }}</td>
+                                <td>{{ $selection->title }}</td>
+                                <td>
+                                    {{ $selection->group_member_1 }} <br>
+                                    {{ $selection->group_member_2 }} <br>
+                                    {{ $selection->group_member_3 }}
 
-                        <!-- Add more rows as needed -->
+                                </td>
+
+
+                                <td>{{ $selection->class_name }}</td>
+                            </tr>
+                        @endforeach
+
+
+
                     </tbody>
                 </table>
             </div>

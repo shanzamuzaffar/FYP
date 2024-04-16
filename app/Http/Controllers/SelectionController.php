@@ -40,4 +40,9 @@ class SelectionController extends Controller
         // Optionally, you can redirect the user to another page after successful submission
  return back()->with('success', 'Selection submitted successfully!');
     }
+
+    public function finalized(){
+        $selections = Selection::with('supervisor')->get();
+        return view('finalizesupervisor',compact('selections'));
+    }
 }
