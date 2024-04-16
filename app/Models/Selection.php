@@ -17,4 +17,8 @@ class Selection extends Model
         'group_member_3',
         'supervisor_id',
     ];
+    public function supervisor()
+    {
+        return $this->belongsTo(Supervisor::class);
+    }
 }
