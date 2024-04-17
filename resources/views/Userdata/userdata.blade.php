@@ -6,6 +6,7 @@
 
 @section('content')
 
+
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -35,6 +36,7 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $userdata->name }}</td>
                                 <td>{{ $userdata->email }}</td>
+
 
 
 
