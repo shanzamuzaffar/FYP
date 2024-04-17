@@ -10,6 +10,7 @@
 
 <body>
 
+
     <div id="bg"></div>
 
     <div class="sidebar">
@@ -61,9 +62,23 @@
             <select name="supervisor_id" class="form-control" required>
                 <option value="" disabled selected hidden>Select Supervisor</option>
                 @foreach($supervisors as $supervisor)
-                    <option value="{{ $supervisor->id }}">{{ $supervisor->name }}</option>
+                    @if($supervisor->available_slots == 0)
+                        <option value="{{ $supervisor->id }}" class="text-danger" disabled>
+                            {{ $supervisor->name }} - Slots: {{ $supervisor->available_slots }}
+                        </option>
+                    @else
+                        <option value="{{ $supervisor->id }}">
+                            {{ $supervisor->name }} - Slots: {{ $supervisor->available_slots }}
+                        </option>
+                    @endif
                 @endforeach
             </select>
+
+
+
+
+
+
             @error('supervisor')
                 <span class="text-danger">{{ $message }}</span>
             @enderror
