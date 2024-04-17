@@ -17,7 +17,11 @@ class SelectionController extends Controller
     public function store(Request $request)
     {
         // Validate the form data
-         $request->validate([
+$s_id = $request['supervisor_id'];
+
+        $available = Supervisor::findOrFail($s_id);
+        if($available->available_slot!=0) {   
+        $request->validate([
             'title' => 'required|string',
             'class_name' => 'required|string',
             'group_member_1' => 'required|string',
@@ -35,10 +39,20 @@ class SelectionController extends Controller
         $selection->supervisor_id = $request['supervisor_id'];
 
         // Save the Selection instance
-        $selection->save();
+   $selection->save();
+    }
+// $available = Supervisor::findOrFail($s_id);
+
+// Check if available slots are greater than 0 before decrementing
+if ($available->available_slots > 0) {
+    $available->available_slots = $available->available_slots - 1;
+    $available->save();
+} else {
+     return redirect()->back()->withErrors(['error' => 'No available slots left.']);
+}
 
         // Optionally, you can redirect the user to another page after successful submission
- return back()->with('success', 'Selection submitted successfully!');
+         return back()->with('success', 'Selection submitted successfully!');
     }
 
     public function finalized(){
