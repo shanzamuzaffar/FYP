@@ -16,6 +16,9 @@ Route::get('/', function () {
 Route::get('rolebutton', function () {
     return view('Rolebutton');
 });
+Route::get('usersupport', function () {
+    return view('usersupport');
+});
 
 // Route::get('/TitleSelection', function () {
 //     return view('TitleSelection');

@@ -22,7 +22,6 @@
                             <th>Designation</th>
                             <th>Total Slots</th>
                             <th>Available Slots</th>
-                            <th>Status</th>
                             <th>Action</th>
 
                         </tr>
@@ -36,7 +35,7 @@
                                 <td>{{ $supervisor->total_slots }}</td>
                                 <!-- Assuming 'office' is a field in your 'supervisors' table -->
                                 <td>{{ $supervisor->available_slots }}</td>
-                                <td>
+                                {{-- <td>
                                     @if ($supervisor->Status == 0)
                                         <form action="{{ route('supervisor.toggleStatus', ['id' => $supervisor->id]) }}"
                                             method="POST">
@@ -47,7 +46,7 @@
                                         <span class="bg-warning p-2">Selected</span>
                                     @endif
                                 </td>
-
+ --}}
 
                                 <td>
                                     <button type="button" class="btn btn-primary editBtn"

@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use Spatie\Permission\Models\Role;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
      public function index(){
         $userdatas=User::all();
+  $roles = Role::all(); 
 
-        return view('Userdata.Userdata ',compact('userdatas'));
+
+        return view('Userdata.Userdata ',compact('userdatas','roles'));
     }
 
     public function store(Request $request)

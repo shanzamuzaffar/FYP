@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>sidebar</title>
+    <title>@yield('title', 'My Site')</title>
     <!--favicon-->
 
 
@@ -30,6 +30,16 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.bootstrap4.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+    <link rel="stylesheet" href="{{ asset('assets/css/styleus.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/stylets.css') }}">
+
+
+
 
 
 
@@ -331,10 +341,10 @@
                     </a>
                 </li>
                 <li class="py-2 list-item">
-                    <a href="javascript:;" class="has-arrow">
+                    <a href="/usersupport" class="has-arrow">
                         <div class="parent-icon"><i class='bx bx-cog'></i>
                         </div>
-                        <div class="menu-title">Settings</div>
+                        <div class="menu-title">User Support</div>
                     </a>
                 </li>
                 <li class="py-2 ">

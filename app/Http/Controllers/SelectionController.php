@@ -20,7 +20,7 @@ class SelectionController extends Controller
         $s_id = $request['supervisor_id'];
 
         $available = Supervisor::findOrFail($s_id);
-        if($available->available_slot!=0) {
+        if($available->available_slots!=0) {
         $request->validate([
             'title' => 'required|string',
             'class_name' => 'required|string',
