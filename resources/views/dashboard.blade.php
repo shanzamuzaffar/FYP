@@ -299,7 +299,7 @@
                     </a>
                 </li>
                 <li class="py-2 list-item">
-                    <a href="javascript:;" class="has-arrow">
+                    <a href="/peercollaborationproject" class="has-arrow">
                         <div class="parent-icon"><i class='bx bx-male-female'></i>
                         </div>
                         <div class="menu-title">Peer Collaboration</div>
