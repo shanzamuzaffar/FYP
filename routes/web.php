@@ -20,6 +20,14 @@ Route::get('usersupport', function () {
     return view('usersupport');
 });
 
+
+    Route::get('/peercollaborationproject', function () {
+        return view('peercollaborationproject');
+    });
+
+  Route::get('/Member', function () {
+    return view('Member');
+})->name('Member');
 // Route::get('/TitleSelection', function () {
 //     return view('TitleSelection');
 // });
