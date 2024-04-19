@@ -14,14 +14,13 @@ Route::get('/', function () {
 ;
 
 
-Route::get('rolebutton', function () {
-    return view('Rolebutton');
-});
+// Route::get('rolebutton', function () {
+//     return view('Rolebutton');
+// });
 Route::get('usersupport', function () {
     return view('usersupport');
 });
-Route::get('/announcement/create', [AnnouncementController::class, 'create'])->name('announcement');
-Route::post('/announcement', 'AnnouncementController@store')->name('announcement.store');
+
 
 
     Route::get('/peercollaborationproject', function () {
@@ -48,7 +47,13 @@ Route::get('/dashboard', function () {
 // Route for first login page
 Route::get('/login', [CustomAuthController::class, 'showLoginForm'])->name('c');
 Route::post('/login', [CustomAuthController::class, 'showLoginForm'])->name('login');
+//--------------------- Announcement-----------
+Route::get('/announcement', [AnnouncementController::class, 'index'])->name('announcement.index');
+Route::post('/announcementadd', [AnnouncementController::class, 'store'])->name('announcement.store');
+Route::post('/announcement/update/{id}', [AnnouncementController::class, 'update'])->name('announcement.update');
+Route::post('/announcement/delete/{id}', [AnnouncementController::class, 'destroy'])->name('announcement.delete');
 
+//--------------------- User Data-----------
 Route::get('/data', [UserController::class, 'index'])->name('data.index');
 Route::post('/data/update/{id}', [UserController::class, 'update'])->name('data.update');
 Route::post('/data/delete/{id}', [UserController::class, 'destroy'])->name('data.delete');
