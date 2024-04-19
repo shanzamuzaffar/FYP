@@ -7,6 +7,7 @@ use App\Http\Controllers\SelectionController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\SupervisorController;
 use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\WorkSubmissionController;
 
 Route::get('/', function () {
     return view('indexL');
@@ -30,6 +31,9 @@ Route::get('usersupport', function () {
   Route::get('/Member', function () {
     return view('Member');
 })->name('Member');
+  Route::get('/worksubmission', function () {
+    return view('workSubmission');
+})->name('worksubmission');
 // Route::get('/TitleSelection', function () {
 //     return view('TitleSelection');
 // });
@@ -70,6 +74,10 @@ Route::get('/login/admin', [CustomAuthController::class, 'showAdminLoginForm'])-
 
 // Route for third login page
 Route::get('/login/other', [CustomAuthController::class, 'showOtherLoginForm'])->name('other.login');
+// Route::get('/workSubmission', [UserController::class, 'workSubmission'])->name('workSubmission');Route::get('/login/other', [CustomAuthController::class, 'showOtherLoginForm'])->name('other.login');
+Route::get('/login/other', [CustomAuthController::class, 'showOtherLoginForm'])->name('other.login');
+Route::post('/SubmitWork', [WorkSubmissionController::class, 'SubmitWork'])->name('SubmitWork');
+Route::get('/login/other', [CustomAuthController::class, 'showOtherLoginForm'])->name('other.login');
 
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
@@ -81,5 +89,6 @@ Route::middleware('auth')->group(function () {
     // Route for storing form data from TitleSelection form
     Route::post('/selection/store', [SelectionController::class, 'store'])->name('selection.store');
 });
+
 
 require __DIR__.'/auth.php';

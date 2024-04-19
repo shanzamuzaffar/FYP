@@ -71,6 +71,10 @@ public function destroy($id)
     return redirect()->back()->with('success', 'userdata  deleted successfully');
 }
 
+public function workSubmission()
+{
+    return view('workSubmission');
+}
 
 }
 
