@@ -1,6 +1,7 @@
 @extends('dashboard')
 
 @section('title', 'Title selection ')
+<link rel="stylesheet" href="{{ asset('assets/css/stylets.css') }}">
 
 @section('content')
 
