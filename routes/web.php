@@ -6,6 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SelectionController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\SupervisorController;
+use App\Http\Controllers\AnnouncementController;
 
 Route::get('/', function () {
     return view('indexL');
@@ -19,6 +20,8 @@ Route::get('rolebutton', function () {
 Route::get('usersupport', function () {
     return view('usersupport');
 });
+Route::get('/announcement/create', [AnnouncementController::class, 'create'])->name('announcement');
+Route::post('/announcement', 'AnnouncementController@store')->name('announcement.store');
 
 
     Route::get('/peercollaborationproject', function () {

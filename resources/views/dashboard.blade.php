@@ -313,12 +313,12 @@
                     </a>
                 </li>
                 <li class="py-2 list-item">
-                    <a href="javascript:;" class="has-arrow">
-                        <div class="parent-icon"><i class='bx bxs-volume-full'></i>
-                        </div>
+                    <a href="{{ route('announcement') }}" class="has-arrow">
+                        <div class="parent-icon"><i class='bx bxs-volume-full'></i></div>
                         <div class="menu-title">Announcement</div>
                     </a>
                 </li>
+                
                 <li class="py-2 list-item">
                     <a href="javascript:;" class="has-arrow">
                         <div class="parent-icon"><i class='bx bxs-bar-chart-square'></i>
