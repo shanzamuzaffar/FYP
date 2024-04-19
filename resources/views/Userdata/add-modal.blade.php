@@ -31,7 +31,7 @@
                         <select class="form-control" id="role" name="role" required>
                             <!-- Populate dropdown with roles -->
                             @foreach ($roles as $role)
-                                <option value="{{ $role->name }}">{{ $role->name }}</option>
+                                <option value="{{ $role->id }}">{{ $role->name }}</option>
                             @endforeach
                         </select>
 

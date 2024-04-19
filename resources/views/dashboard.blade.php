@@ -314,12 +314,30 @@
                         <div class="menu-title">Work Submission</div>
                     </a>
                 </li>
-                <li class="py-2 list-item">
+                <li class="py-2 ">
+                    <div class="dropdown">
+                        <button
+                            class="btn btn-secondary dropdown-toggle d-flex align-items-center gap-2 bg-transparent border-0"
+                            type="button" id="dropdownMenuButton">
+                            <div class="parent-icon"><i class='bx bxs-volume-full'></i></div>
+                            <div class="menu-title">Announcement</div>
+                        </button>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item text-white" href="{{ route('announcement.index') }}">Announcement List</a>
+                           
+                        </div>
+                    </div>
+                </li>
+
+
+
+                {{-- <li class="py-2 list-item">
                     <a href="{{ route('announcement') }}" class="has-arrow">
                         <div class="parent-icon"><i class='bx bxs-volume-full'></i></div>
                         <div class="menu-title">Announcement</div>
                     </a>
-                </li>
+                </li> --}}
                 
                 <li class="py-2 list-item">
                     <a href="javascript:;" class="has-arrow">
