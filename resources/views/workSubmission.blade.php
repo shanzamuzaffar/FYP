@@ -140,20 +140,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Student Course Evaluation</td>
-                            <td>
-                                <div class="button student-button">Teacher Evaluation</div>
-                            </td>
-                            <td>
-                                <div class="custom-file-input">
-                                    <input type="file" id="fileInput">
-                                    <label for="fileInput">
-                                        <button>Choose File</button>
-                                    </label>
-                                </div>
-                            </td>
-                        </tr>
+                        @foreach ($work as $item)
+                            <tr>
+                                <td>{{ $item->event_name }}</td>
+                                <td>
+                                    <a href="/uploads/{{ $item->file }}"
+                                        download="{{ $item->file }}">{{ $item->file }}</a>
+                                </td>
+                                <td>
+                                    <div class="custom-file-input">
+                                        <input type="file" id="fileInput">
+                                        <label for="fileInput">
+                                            <button>Choose File</button>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
 
                     </tbody>
                 </table>

@@ -43,13 +43,15 @@ Route::get('usersupport', function () {
   Route::get('/Member', function () {
     return view('Member');
 })->name('Member');
-  Route::get('/worksubmission', function () {
-    return view('workSubmission');
-})->name('worksubmission');
+//   Route::get('/worksubmission', function () {
+//     $work=Event::all();
+//     return view('workSubmission',compact('work'));
+// })->name('worksubmission');
+Route::get('/worksubmission',[WorkSubmissionController::class,'show'])->name('worksubmission');
+Route::get('/Frontpage', function () {
+    return view('Frontpage');
+});
 
-// Route::get('/TitleSelection', function () {
-//     return view('TitleSelection');
-// });
 
 // Route::get('finalizesupervisor', function () {
 //     return view('finalizesupervisor');

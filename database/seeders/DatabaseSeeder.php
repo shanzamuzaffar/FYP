@@ -56,5 +56,7 @@ class DatabaseSeeder extends Seeder
         $user2->save();
         $user2->assignRole('coordinator');
 
+
+
     }
 }
