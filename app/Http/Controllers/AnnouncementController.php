@@ -44,8 +44,10 @@ class AnnouncementController extends Controller
     public function store(Request $request)
     {
 
-
-
+$validatedData = $request->validate([
+    'message' => 'required|string',
+   
+]);
 
         $user = new Announcement();
         $user->message = $validatedData['message'];
