@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class WorkSubmissionController extends Controller
 {
+
+    public function show()
+    {
+        $work=Event::all();
+        return view('workSubmission',compact('work'));
+    }
     //
     public function SubmitWork(Request $request)
     {

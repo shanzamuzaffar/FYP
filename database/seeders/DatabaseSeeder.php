@@ -54,5 +54,7 @@ class DatabaseSeeder extends Seeder
         $user2->email_verified_at = now();
         $user2->save();
         $user2->assignRole('coordinator');
+
+      
     }
 }

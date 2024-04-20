@@ -510,6 +510,17 @@ input::placeholder {
   border-bottom-left-radius: 20px;
 }
 
+.sidebar-wrapper .sidebar-nav .metismenu .mm-active a {
+  text-decoration: none;
+  color: #11726c;
+  background: #fff;
+  outline: none;
+  position: relative;
+  background-color: #fff;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
 /* .sidebar-wrapper .sidebar-nav .metismenu a:hover::after {
     content: '';
     position: absolute;
@@ -567,7 +578,7 @@ input::placeholder {
 .sidebar-wrapper .sidebar-nav .metismenu .mm-active>a {
   color: #11726c;
   text-decoration: none;
-  background-color: #11726c;
+  /* background-color: #11726c; */
 }
 
 .sidebar-wrapper .sidebar-bottom {

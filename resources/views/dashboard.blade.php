@@ -90,6 +90,7 @@
             background: #fff;
         }
 
+
         .list .list-item {
             position: relative;
         }
@@ -134,6 +135,11 @@
 
         .list .list-item:hover a::before,
         .list .list-item:hover a::after {
+            opacity: 1;
+        }
+
+        .list .list-item.mm-active a::before,
+        .list .list-item.mm-active a::after {
             opacity: 1;
         }
 
@@ -240,10 +246,10 @@
 
             <div class="ms-5 mt-5  ">
                 <div class="logo-icon logo-name ">
-                    <img src="./assets/images/Logo.jpeg" class="logo-img mt-5  rounded-pill w-100   " alt="">
+                    <img src="assets/images/Logo.png" class="logo-img mt-5  rounded-pill w-100   " alt="">
                 </div>
                 <div class="logo-namesecond   ">
-                    <img src="./assets/images/Logo.jpeg" class="logo-img rounded-pill" alt=""
+                    <img src="assets/images/Logo.png" class="logo-img rounded-pill" alt=""
                         style="width: 130px;">
                 </div>
             </div>
@@ -257,7 +263,7 @@
             <!--navigation-->
             <ul class="metismenu list  " id="sidenav">
                 <li class="py-2 list-item">
-                    <a href="javascript:;" class="has-arrow">
+                    <a href="/Frontpage" class="has-arrow">
                         <div class="parent-icon"><i class='bx bxs-home'></i>
                         </div>
                         <div class="menu-title">Dashboard</div>
@@ -308,7 +314,7 @@
                     </a>
                 </li>
                 <li class="py-2 list-item">
-                    <a href="javascript:;" class="has-arrow">
+                    <a href="{{ route('worksubmission') }}" class="has-arrow">
                         <div class="parent-icon"><i class='bx bx-upload'></i>
                         </div>
                         <div class="menu-title">Work Submission</div>
@@ -324,8 +330,9 @@
                         </button>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item text-white" href="{{ route('announcement.index') }}">Announcement List</a>
-                           
+                            <a class="dropdown-item text-white" href="{{ route('announcement.index') }}">Announcement
+                                List</a>
+
                         </div>
                     </div>
                 </li>
@@ -338,7 +345,7 @@
                         <div class="menu-title">Announcement</div>
                     </a>
                 </li> --}}
-                
+
                 <li class="py-2 list-item">
                     <a href="javascript:;" class="has-arrow">
                         <div class="parent-icon"><i class='bx bxs-bar-chart-square'></i>

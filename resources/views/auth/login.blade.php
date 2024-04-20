@@ -164,16 +164,16 @@
                         autocomplete="current-password">
                 </div>
                 @role('student')
-                <div class="row">
-                    <i class="fas fa-layer-group"></i>
-                    <select name="Degree" required>
-                        <option value="" disabled selected hidden>Choose Degree</option>
-                        <option value="BS(SE)">BS(SE)</option>
-                        <option value="BS(CS)">BS(CS)</option>
-                    </select>
-                </div>
-                 @endrole
-           
+                    <div class="row">
+                        <i class="fas fa-layer-group"></i>
+                        <select name="Degree" required>
+                            <option value="" disabled selected hidden>Choose Degree</option>
+                            <option value="BS(SE)">BS(SE)</option>
+                            <option value="BS(CS)">BS(CS)</option>
+                        </select>
+                    </div>
+                @endrole
+
 
 
                 <div class="forgot-password">

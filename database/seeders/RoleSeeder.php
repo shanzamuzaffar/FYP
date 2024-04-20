@@ -33,5 +33,6 @@ class RoleSeeder extends Seeder
         if (!Role::where('name', 'coordinator')->exists()) {
             Role::create(['name' => 'coordinator']);
         }
+         
     }
 }
