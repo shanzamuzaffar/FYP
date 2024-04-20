@@ -5,9 +5,14 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SelectionController;
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\PeerCollaborationController;
 use App\Http\Controllers\SupervisorController;
+
+use App\Models\Selection;
+
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\WorkSubmissionController;
+
 
 Route::get('/', function () {
     return view('indexL');
@@ -21,6 +26,13 @@ Route::get('/', function () {
 Route::get('usersupport', function () {
     return view('usersupport');
 });
+
+
+    Route::get('/peercollaborationproject', [PeerCollaborationController::class,'index'])->name('peercollaborationproject');
+
+  Route::get('/Member/{id}',[PeerCollaborationController::class,'members'])->name('member');
+  Route::post('add-member-details',[PeerCollaborationController::class,'add_member_details'])->name('add-member-details');
+  Route::post('update-member-details/{id}',[PeerCollaborationController::class,'update_member_details'])->name('update-member-details');
 
 
 
@@ -39,6 +51,7 @@ Route::get('/worksubmission',[WorkSubmissionController::class,'show'])->name('wo
 Route::get('/Frontpage', function () {
     return view('Frontpage');
 });
+
 
 // Route::get('finalizesupervisor', function () {
 //     return view('finalizesupervisor');
@@ -90,6 +103,7 @@ Route::middleware('auth')->group(function () {
 
     // Route for storing form data from TitleSelection form
     Route::post('/selection/store', [SelectionController::class, 'store'])->name('selection.store');
+
 });
 
 

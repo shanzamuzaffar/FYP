@@ -17,8 +17,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        
+
           $this->call(RoleSeeder::class);
+
           $this->call(AnnouncementSeeder::class);
            
             
@@ -55,6 +56,7 @@ class DatabaseSeeder extends Seeder
         $user2->save();
         $user2->assignRole('coordinator');
 
-      
+
+
     }
 }
