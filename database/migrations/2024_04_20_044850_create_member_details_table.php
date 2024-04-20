@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('selections', function (Blueprint $table) {
-         $table->id();
+        Schema::create('member_details', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('member_id');
+            $table->foreignId('selection_id');
             $table->string('title');
-            $table->string('class_name');
-            $table->unsignedBigInteger('supervisor_id');
-            $table->foreign('supervisor_id')->references('id')->on('supervisor')->onDelete('cascade');
-
+            $table->string('description');
+            $table->string('date');
+            $table->string('file');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('selections');
+        Schema::dropIfExists('member_details');
     }
 };
