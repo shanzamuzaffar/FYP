@@ -7,7 +7,12 @@ use App\Http\Controllers\SelectionController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\PeerCollaborationController;
 use App\Http\Controllers\SupervisorController;
+
 use App\Models\Selection;
+
+use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\WorkSubmissionController;
+
 
 Route::get('/', function () {
     return view('indexL');
@@ -15,18 +20,33 @@ Route::get('/', function () {
 ;
 
 
-Route::get('rolebutton', function () {
-    return view('Rolebutton');
-});
+// Route::get('rolebutton', function () {
+//     return view('Rolebutton');
+// });
 Route::get('usersupport', function () {
     return view('usersupport');
 });
+
 
     Route::get('/peercollaborationproject', [PeerCollaborationController::class,'index'])->name('peercollaborationproject');
 
   Route::get('/Member/{id}',[PeerCollaborationController::class,'members'])->name('member');
   Route::post('add-member-details',[PeerCollaborationController::class,'add_member_details'])->name('add-member-details');
   Route::post('update-member-details/{id}',[PeerCollaborationController::class,'update_member_details'])->name('update-member-details');
+
+
+
+    Route::get('/peercollaborationproject', function () {
+        return view('peercollaborationproject');
+    });
+
+  Route::get('/Member', function () {
+    return view('Member');
+})->name('Member');
+  Route::get('/worksubmission', function () {
+    return view('workSubmission');
+})->name('worksubmission');
+
 // Route::get('/TitleSelection', function () {
 //     return view('TitleSelection');
 // });
@@ -44,7 +64,13 @@ Route::get('/dashboard', function () {
 // Route for first login page
 Route::get('/login', [CustomAuthController::class, 'showLoginForm'])->name('c');
 Route::post('/login', [CustomAuthController::class, 'showLoginForm'])->name('login');
+//--------------------- Announcement-----------
+Route::get('/announcement', [AnnouncementController::class, 'index'])->name('announcement.index');
+Route::post('/announcementadd', [AnnouncementController::class, 'store'])->name('announcement.store');
+Route::post('/announcement/update/{id}', [AnnouncementController::class, 'update'])->name('announcement.update');
+Route::post('/announcement/delete/{id}', [AnnouncementController::class, 'destroy'])->name('announcement.delete');
 
+//--------------------- User Data-----------
 Route::get('/data', [UserController::class, 'index'])->name('data.index');
 Route::post('/data/update/{id}', [UserController::class, 'update'])->name('data.update');
 Route::post('/data/delete/{id}', [UserController::class, 'destroy'])->name('data.delete');
@@ -61,6 +87,10 @@ Route::get('/login/admin', [CustomAuthController::class, 'showAdminLoginForm'])-
 
 // Route for third login page
 Route::get('/login/other', [CustomAuthController::class, 'showOtherLoginForm'])->name('other.login');
+// Route::get('/workSubmission', [UserController::class, 'workSubmission'])->name('workSubmission');Route::get('/login/other', [CustomAuthController::class, 'showOtherLoginForm'])->name('other.login');
+Route::get('/login/other', [CustomAuthController::class, 'showOtherLoginForm'])->name('other.login');
+Route::post('/SubmitWork', [WorkSubmissionController::class, 'SubmitWork'])->name('SubmitWork');
+Route::get('/login/other', [CustomAuthController::class, 'showOtherLoginForm'])->name('other.login');
 
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
@@ -73,5 +103,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/selection/store', [SelectionController::class, 'store'])->name('selection.store');
 
 });
+
 
 require __DIR__.'/auth.php';

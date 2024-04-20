@@ -6,16 +6,15 @@
 
 @section('content')
 
+<div class="container ">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-right mb-3">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addUserdataModal">
+                    Add users
+                </button>
+            </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="text-right mb-3">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addUserdataModal">
-                        Add users
-                    </button>
-                </div>
-                @include('Userdata.add-modal')
                 <table id="example" class="table table-striped table-bordered" style="width:100%">
                     <thead>
                         <tr>
@@ -32,33 +31,33 @@
                     <tbody>
 
                         @foreach ($userdatas as $userdata)
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $userdata->name }}</td>
-                                <td>{{ $userdata->email }}</td>
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $userdata->name }}</td>
+                            <td>{{ $userdata->email }}</td>
 
 
 
 
 
-                                <td>
-                                    <button type="button" class="btn btn-primary editBtn"
-                                        data-target="#editModal-{{ $userdata->id }}" data-toggle="modal">
-                                        Edit
-                                    </button>
+                            <td>
+                                <button type="button" class="btn btn-primary editBtn"
+                                data-target="#editModal-{{ $userdata->id }}" data-toggle="modal">
+                                Edit
+                            </button>
 
                                     <!-- Delete button to open the confirmation modal -->
                                     <button type="button" class="btn btn-danger" data-toggle="modal"
-                                        data-target="#deleteModal-{{ $userdata->id }}">
-                                        Delete
-                                    </button>
+                                    data-target="#deleteModal-{{ $userdata->id }}">
+                                    Delete
+                                </button>
 
-                                    @include('Userdata.edit-modal')
-                                    @include('Userdata.delete-modal')
+                                @include('Userdata.edit-modal')
+                                @include('Userdata.delete-modal')
 
 
-                                </td>
-                            </tr>
+                            </td>
+                        </tr>
                         @endforeach
 
                         <!-- Add more table rows if needed -->
@@ -73,4 +72,5 @@
 
 
 
-@endsection
+    @include('Userdata.add-modal')
+    @endsection

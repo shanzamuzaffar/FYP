@@ -147,7 +147,7 @@
                 </div>
             @endif
 
-            <div class="title">Student Login</div>
+            <div class="title"> Login</div>
 
             <form name="f1" method="POST" action="" onsubmit="return validation()">
                 @csrf
@@ -163,7 +163,7 @@
                     <input id="password" type="password" name="password" placeholder="Password" required
                         autocomplete="current-password">
                 </div>
-
+                @role('student')
                 <div class="row">
                     <i class="fas fa-layer-group"></i>
                     <select name="Degree" required>
@@ -172,6 +172,9 @@
                         <option value="BS(CS)">BS(CS)</option>
                     </select>
                 </div>
+                 @endrole
+           
+
 
                 <div class="forgot-password">
                     @if (Route::has('password.request'))
