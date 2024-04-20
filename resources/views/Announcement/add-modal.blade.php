@@ -11,7 +11,7 @@
             </div>
             <div class="modal-body">
          
-                <<form action="{{ route('announcement.store') }}" method="POST" id="addUserdataForm">
+                <form action="{{ route('announcement.store') }}" method="POST" id="addUserdataForm">
                     @csrf
                     <div class="form-group">
                         <label for="message">Message</label>
