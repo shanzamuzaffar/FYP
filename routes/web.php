@@ -5,7 +5,9 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SelectionController;
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\PeerCollaborationController;
 use App\Http\Controllers\SupervisorController;
+use App\Models\Selection;
 
 Route::get('/', function () {
     return view('indexL');
@@ -20,6 +22,11 @@ Route::get('usersupport', function () {
     return view('usersupport');
 });
 
+    Route::get('/peercollaborationproject', [PeerCollaborationController::class,'index'])->name('peercollaborationproject');
+
+  Route::get('/Member/{id}',[PeerCollaborationController::class,'members'])->name('member');
+  Route::post('add-member-details',[PeerCollaborationController::class,'add_member_details'])->name('add-member-details');
+  Route::post('update-member-details/{id}',[PeerCollaborationController::class,'update_member_details'])->name('update-member-details');
 // Route::get('/TitleSelection', function () {
 //     return view('TitleSelection');
 // });
@@ -64,6 +71,7 @@ Route::middleware('auth')->group(function () {
 
     // Route for storing form data from TitleSelection form
     Route::post('/selection/store', [SelectionController::class, 'store'])->name('selection.store');
+
 });
 
 require __DIR__.'/auth.php';

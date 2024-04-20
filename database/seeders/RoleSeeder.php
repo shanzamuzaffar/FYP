@@ -13,7 +13,7 @@ class RoleSeeder extends Seeder
      */
     public function run(): void
     {
-        
+
         // Reset cached roles and permissions
       app()['cache']->forget('spatie.permission.cache');
 
@@ -22,12 +22,15 @@ class RoleSeeder extends Seeder
             Role::create(['name' => 'admin']);
         }
 
-        if (!Role::where('name', 'user')->exists()) {
-            Role::create(['name' => 'user']);
+        if (!Role::where('name', 'student')->exists()) {
+            Role::create(['name' => 'student']);
         }
 
-        if (!Role::where('name', 'faculty')->exists()) {
-            Role::create(['name' => 'faculty']);
+        if (!Role::where('name', 'supervisor')->exists()) {
+            Role::create(['name' => 'supervisor']);
+        }
+        if (!Role::where('name', 'cordinator')->exists()) {
+            Role::create(['name' => 'cordinator']);
         }
     }
 }
